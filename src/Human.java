@@ -19,7 +19,7 @@ public class Human extends Creature implements Warrior{
         this.ammo = ammo;
     }
 
-    public void attack(){
+    public void attack(Warrior warrior){
         System.out.println("I am attacking now");
     }
 }

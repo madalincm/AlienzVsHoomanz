@@ -19,7 +19,7 @@ public class Alien extends Creature implements Warrior{
         this.energy = energy;
     }
 
-    public void attack(){
+    public void attack(Warrior warrior){
         System.out.println("I am attacking now");
     }
 }
