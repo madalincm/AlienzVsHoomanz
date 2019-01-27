@@ -4,7 +4,7 @@ import java.util.UUID;
  * Created by madalin.cotetiu on 1/25/2019.
  */
 public class Creature {
-    private int health;
+    private float health;
     private boolean isDead;
     private int attackPower;
     private String id;
@@ -14,11 +14,11 @@ public class Creature {
         this.id = UUID.randomUUID().toString();
     }
 
-    public int getHealth() {
+    public float getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(float health) {
         this.health = health;
     }
 

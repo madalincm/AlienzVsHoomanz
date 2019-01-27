@@ -3,11 +3,12 @@
  */
 public class Alien extends Creature implements Warrior{
     private int energy;
+    private int dodge;
 
     public Alien() {
-        this.setHealth(200);
+        this.setHealth(100);
         this.setAttackPower(20);
-        this.energy = 100;
+        this.energy = 130;
         this.setDead(false);
     }
 
@@ -38,7 +39,7 @@ public class Alien extends Creature implements Warrior{
 
     public void dealWithAttack(int damage) {
         this.setHealth(this.getHealth() - damage);
-        if(this.getHealth() == 0) {
+        if(this.getHealth() <= 0) {
             this.setDead(true);
         }
     }

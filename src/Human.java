@@ -5,14 +5,24 @@ import java.sql.SQLOutput;
  */
 public class Human extends Creature implements Warrior{
     private int ammo;
+    private int armor;
 
     public Human() {
         this.setHealth(100);
         this.setAttackPower(15);
         this.ammo = 200;
         this.setDead(false);
+        this.armor = 10;
+
     }
 
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
     public int getAmmo() {
         return ammo;
     }
@@ -30,8 +40,8 @@ public class Human extends Creature implements Warrior{
     }
 
     public void dealWithAttack(int damage) {
-        this.setHealth(this.getHealth() - damage);
-        if(this.getHealth() == 0) {
+        this.setHealth(this.getHealth() - (damage - this.armor * 0.1f));
+        if(this.getHealth() <= 0) {
             this.setDead(true);
         }
     }
@@ -54,6 +64,7 @@ public class Human extends Creature implements Warrior{
         System.out.println("Stats for " + this.getId());
         System.out.println("Health: " + this.getHealth());
         System.out.println("Ammo: " + this.ammo);
-        System.out.println("Attack power " + this.getAttackPower());
+        System.out.println("Attack power: " + this.getAttackPower());
+        System.out.println("Dead: " + this.isDead());
     }
 }
