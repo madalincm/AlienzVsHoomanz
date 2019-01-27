@@ -3,7 +3,7 @@ import java.sql.SQLOutput;
 /**
  * Created by madalin.cotetiu on 1/25/2019.
  */
-public class Human extends Creature implements Warrior{
+public class Human extends Creature implements Warrior {
     private int ammo;
     private int armor;
 
@@ -23,6 +23,7 @@ public class Human extends Creature implements Warrior{
     public void setArmor(int armor) {
         this.armor = armor;
     }
+
     public int getAmmo() {
         return ammo;
     }
@@ -35,20 +36,20 @@ public class Human extends Creature implements Warrior{
         return ((this.ammo != 0) && !this.isDead());
     }
 
-    public boolean canBeAttacked(){
+    public boolean canBeAttacked() {
         return !this.isDead();
     }
 
     public void dealWithAttack(int damage) {
         this.setHealth(this.getHealth() - (damage - this.armor * 0.1f));
-        if(this.getHealth() <= 0) {
+        if (this.getHealth() <= 0) {
             this.setDead(true);
         }
     }
 
-    public String performAttack(Warrior warrior){
+    public String performAttack(Warrior warrior) {
         if (this.canAttack()) {
-            if(warrior.canBeAttacked()){
+            if (warrior.canBeAttacked()) {
                 warrior.dealWithAttack(this.getAttackPower());
                 this.ammo = this.ammo - 15;
                 return "Attack completed";

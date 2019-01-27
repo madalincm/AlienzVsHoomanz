@@ -4,8 +4,7 @@ public class Main {
         Human human1 = new Human();
         Alien alien1 = new Alien();
 
-
-        Warrior human2 = new Human();
+        Human human2 = new Human();
         System.out.println(alien1.performAttack(human2));
         System.out.println(alien1.performAttack(human2));
         System.out.println(alien1.performAttack(human2));
@@ -26,9 +25,6 @@ public class Main {
         System.out.println(human1.performAttack(alien1));
         System.out.println(human1.performAttack(alien1));
         alien1.displayStats();
-
-
-
 
     }
 }

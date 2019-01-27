@@ -3,8 +3,12 @@
  */
 public interface Warrior {
     boolean canAttack();
+
     boolean canBeAttacked();
+
     String performAttack(Warrior warrior);
+
     void dealWithAttack(int damage);
+
     void displayStats();
 }

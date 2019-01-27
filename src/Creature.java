@@ -42,6 +42,7 @@ public class Creature {
         return id;
     }
 
+
     public void kill() {
         this.health = 0;
         this.isDead = true;

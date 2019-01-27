@@ -1,9 +1,8 @@
 /**
  * Created by madalin.cotetiu on 1/25/2019.
  */
-public class Alien extends Creature implements Warrior{
+public class Alien extends Creature implements Warrior {
     private int energy;
-    private int dodge;
 
     public Alien() {
         this.setHealth(100);
@@ -20,34 +19,35 @@ public class Alien extends Creature implements Warrior{
         this.energy = energy;
     }
 
-    public void calculateAtackPower(){
-        if(this.energy <=49) {
+    private void calculateAttackPower() {
+        if (this.energy <= 49) {
             this.setAttackPower(5);
-        } else if(this.energy <= 79) {
+        } else if (this.energy <= 79) {
             this.setAttackPower(10);
         } else {
             this.setAttackPower(20);
         }
     }
+
     public boolean canAttack() {
         return ((this.energy != 0) && !this.isDead());
     }
 
-    public boolean canBeAttacked(){
+    public boolean canBeAttacked() {
         return !this.isDead();
     }
 
     public void dealWithAttack(int damage) {
         this.setHealth(this.getHealth() - damage);
-        if(this.getHealth() <= 0) {
+        if (this.getHealth() <= 0) {
             this.setDead(true);
         }
     }
 
-    public String performAttack(Warrior warrior){
-        if(this.canAttack()){
-            if(warrior.canBeAttacked()){
-                calculateAtackPower();
+    public String performAttack(Warrior warrior) {
+        if (this.canAttack()) {
+            if (warrior.canBeAttacked()) {
+                calculateAttackPower();
                 warrior.dealWithAttack(this.getAttackPower());
                 this.energy = this.energy - 10;
                 return "Attack completed";
