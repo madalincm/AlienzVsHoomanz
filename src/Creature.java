@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 /**
  * Created by madalin.cotetiu on 1/25/2019.
  */
@@ -5,9 +7,11 @@ public class Creature {
     private int health;
     private boolean isDead;
     private int attackPower;
+    private String id;
 
     public Creature() {
         this.isDead = false;
+        this.id = UUID.randomUUID().toString();
     }
 
     public int getHealth() {
@@ -32,6 +36,10 @@ public class Creature {
 
     public void setAttackPower(int attackPower) {
         this.attackPower = attackPower;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void kill() {
