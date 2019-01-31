@@ -1,7 +1,7 @@
 /**
  * Created by madalin.cotetiu on 1/25/2019.
  */
-public class Alien extends Creature implements Warrior {
+public class Alien extends Creature implements Warrior{
     private int energy;
 
     public Alien() {
